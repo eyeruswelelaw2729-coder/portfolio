@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Portfolio | 4th-Year Undergraduate</title>
+  <meta name="description" content="Professional portfolio of a 4th-year Cybersecurity student specializing in defensive engineering, penetration testing, network security, and digital forensics.">
+  <meta name="keywords" content="Cybersecurity, Ethical Hacking, Penetration Testing, Network Security, SIEM, Digital Forensics, DFIR, SOC Analyst, Student Portfolio">
+  <meta name="author" content="Cybersecurity Student">
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Cybersecurity Student Portfolio">
+  <meta property="og:description" content="Portfolio of a 4th-year Cybersecurity student seeking internships & entry-level security engineering roles.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (Cyber Shield SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Dynamic Background Mesh Grid & Particle Canvas -->
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+  <canvas id="network-canvas" aria-hidden="true"></canvas>
+
+  <div class="site-wrapper">
+
+    <!-- TOP SECURITY TELEMETRY RIBBON -->
+    <aside class="top-status-bar" aria-label="System Telemetry">
+      <div class="top-status-left">
+        <div class="top-status-item">
+          <span class="status-dot"></span>
+          <span>POSTURE: ACTIVE // DEFENSIVE READY</span>
+        </div>
+        <div class="top-status-item">
+          <span class="text-cyan">LOC:</span>
+          <span id="top-bar-location">[YOUR LOCATION]</span>
+        </div>
+      </div>
+      <div class="top-status-right">
+        <div class="top-status-item">
+          <span class="text-cyan">SYS_TIME (UTC):</span>
+          <span id="utc-clock">00:00:00</span>
+        </div>
+        <div class="top-status-item">
+          <button class="btn btn-terminal btn-sm" id="btn-open-terminal-top" title="Open Interactive CLI Shell">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+            <span>CLI SHELL</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- STICKY NAVIGATION -->
+    <header class="navbar" id="main-nav">
+      <div class="container nav-container">
+        <a href="#hero" class="brand-logo" aria-label="Home">
+          <div class="brand-icon-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name" id="nav-brand-name">[YOUR NAME]</span>
+            <span class="brand-tag">SEC_OPS // 4TH-YEAR</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-links" id="nav-menu">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#labs" class="nav-link">Labs & CTFs</a></li>
+            <li><a href="#certifications" class="nav-link">Certifications</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="btn btn-outline btn-sm" id="btn-quick-resume" aria-label="View Resume">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>Resume</span>
+          </button>
+
+          <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle navigation menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <!-- HERO SECTION -->
+      <section class="hero-section" id="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge-wrap">
+              <span class="status-pill">
+                <span class="status-dot"></span>
+                <span id="hero-availability-tag">4th-Year Student • Seeking 2025/2026 Opportunities</span>
+              </span>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="text-gradient" id="hero-name-placeholder">[YOUR NAME]</span>
+            </h1>
+
+            <div class="hero-subtitle-box">
+              <span class="text-cyan font-mono">></span>
+              <span id="typewriter-text" class="font-mono">4th-Year Cybersecurity Student</span>
+              <span class="cursor-blink" aria-hidden="true"></span>
+            </div>
+
+            <p class="hero-description" id="hero-bio-lead">
+              I’m a cybersecurity student passionate about ethical hacking, penetration testing, network security, digital forensics, and building secure systems.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                <span>View My Projects</span>
+              </a>
+
+              <button class="btn btn-secondary" id="btn-hero-resume">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download Resume</span>
+              </button>
+
+              <a href="#contact" class="btn btn-outline">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span>Contact Me</span>
+              </a>
+            </div>
+
+            <div class="hero-social-links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link-item" id="hero-github-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link-item" id="hero-linkedin-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </a>
+
+              <button class="social-link-item" id="btn-copy-email" style="background:none; border:none; cursor:pointer;" title="Copy Email to Clipboard">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span id="copy-email-status">Copy Email</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Visual: Cyber Operations Telemetry Node -->
+          <div class="hero-visual">
+            <div class="telemetry-card">
+              <div class="telemetry-header">
+                <div class="window-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <div class="telemetry-title">SEC_AUDIT // NODE-01_TELEMETRY</div>
+                <span class="status-pill" style="padding: 0.15rem 0.5rem; font-size: 0.7rem;">LIVE</span>
+              </div>
+
+              <div class="telemetry-body">
+                <div class="telemetry-profile-header">
+                  <div class="avatar-cyber-hex">
+                    <span class="avatar-initials" id="avatar-initials">CS</span>
+                    <span class="avatar-status-badge"></span>
+                  </div>
+                  <div class="telemetry-profile-meta">
+                    <h3 id="telemetry-name">[YOUR NAME]</h3>
+                    <p id="telemetry-specialization">DEFENSIVE & OFFENSIVE CYBERSECURITY</p>
+                    <span class="text-muted" style="font-size: 0.775rem;" id="telemetry-school">[YOUR UNIVERSITY]</span>
+                  </div>
+                </div>
+
+                <div class="radar-stats-grid">
+                  <div class="radar-stat-box">
+                    <div class="radar-stat-label">Academic Status</div>
+                    <div class="radar-stat-val text-cyan">4th-Year Senior</div>
+                  </div>
+                  <div class="radar-stat-box">
+                    <div class="radar-stat-label">Security Focus</div>
+                    <div class="radar-stat-val text-emerald">SOC / PTES / DFIR</div>
+                  </div>
+                  <div class="radar-stat-box">
+                    <div class="radar-stat-label">Certifications</div>
+                    <div class="radar-stat-val">Security+, eJPT</div>
+                  </div>
+                  <div class="radar-stat-box">
+                    <div class="radar-stat-label">Work Auth</div>
+                    <div class="radar-stat-val">Eligible / Clearable</div>
+                  </div>
+                </div>
+
+                <div class="posture-meter-wrap">
+                  <div class="posture-meter-label">
+                    <span>Vulnerability & Attack Surface Score</span>
+                    <span class="text-emerald font-mono">98.4% HARDENED</span>
+                  </div>
+                  <div class="meter-track">
+                    <div class="meter-bar"></div>
+                  </div>
+                </div>
+
+                <div class="telemetry-footer-log font-mono">
+                  <span>> snort -i eth0: 0 alerts (Normal)</span>
+                  <span class="text-cyan">PING 14ms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT ME SECTION -->
+      <section class="about-section" id="about">
+        <div class="container">
+
+          <!-- Core Statistics Row -->
+          <div class="stats-grid" id="stats-container">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+
+          <div class="about-main-grid">
+            <div class="about-bio-wrap">
+              <div class="section-pretitle">Candidate Dossier</div>
+              <h2 class="section-title">Bridging Hands-On Labs with Real-World Defense</h2>
+              <p class="about-bio-text" id="about-bio-paragraph-1">
+                As a 4th-year Cybersecurity undergraduate, my education has centered around rigorous hands-on laboratory experimentation, attack-defense simulations, and modern security engineering.
+              </p>
+              <p class="about-bio-text" id="about-bio-paragraph-2">
+                I do not just understand protocols and theoretical risks on paper—I have built segmented zero-trust networks, dissected malicious PCAPs in Wireshark, developed automated vulnerability auditing scripts in Python, and triaged simulated enterprise intrusions inside ELK SIEM pipelines.
+              </p>
+              <p class="about-bio-text">
+                I am actively seeking internship and entry-level cybersecurity roles where I can contribute immediate value to a Security Operations Center (SOC), Threat Intelligence team, or Penetration Testing practice.
+              </p>
+            </div>
+
+            <div class="about-highlights-grid" id="about-highlights-container">
+              <!-- Rendered dynamically by app.js -->
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section class="skills-section" id="skills">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-pretitle">Technical Competencies</div>
+            <h2 class="section-title">Cybersecurity Skills & Toolsets</h2>
+            <p class="section-subtitle">
+              Comprehensive technical proficiencies developed through coursework, dedicated virtualization homelabs, and CTF challenges.
+            </p>
+          </div>
+
+          <!-- Category filter buttons -->
+          <div class="skills-filter-nav" id="skills-filter-nav">
+            <button class="filter-btn active" data-filter="all">All Skills</button>
+            <button class="filter-btn" data-filter="network">Network Security</button>
+            <button class="filter-btn" data-filter="offensive">Offensive Security</button>
+            <button class="filter-btn" data-filter="defensive">Defensive Security</button>
+            <button class="filter-btn" data-filter="forensics">Digital Forensics</button>
+            <button class="filter-btn" data-filter="programming">Programming & Scripting</button>
+            <button class="filter-btn" data-filter="tools">Tools & Technologies</button>
+          </div>
+
+          <!-- Skills Cards Grid -->
+          <div class="skills-categories-grid" id="skills-grid-container">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section class="projects-section" id="projects">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-pretitle">Engineering & Research</div>
+            <h2 class="section-title">Featured Cybersecurity Projects</h2>
+            <p class="section-subtitle">
+              Applied security systems, custom scanners, detection rules, and forensic investigations built with industry-standard tooling.
+            </p>
+          </div>
+
+          <!-- Project Filter Bar -->
+          <div class="projects-filter-bar" id="projects-filter-bar">
+            <button class="filter-btn active" data-category="all">All Projects (6)</button>
+            <button class="filter-btn" data-category="offensive">Offensive & Pentest</button>
+            <button class="filter-btn" data-category="defensive">Defensive & SIEM</button>
+            <button class="filter-btn" data-category="forensics">Digital Forensics</button>
+            <button class="filter-btn" data-category="networking">Network Architecture</button>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="projects-grid" id="projects-grid-container">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- CTF & SECURITY LABS SECTION -->
+      <section class="ctf-section" id="labs">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-pretitle">Hands-on Experience</div>
+            <h2 class="section-title">CTF Competitions & Security Labs</h2>
+            <p class="section-subtitle">
+              Real-world attack simulations, gamified challenge platforms, and competitive cyber defense leagues where practical instincts are honed.
+            </p>
+          </div>
+
+          <div class="ctf-grid" id="ctf-grid-container">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS SECTION -->
+      <section class="certs-section" id="certifications">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-pretitle">Industry Credentials</div>
+            <h2 class="section-title">Certifications & Roadmap</h2>
+            <p class="section-subtitle">
+              Formal validations of defensive operations, networking principles, and hands-on penetration testing methodologies.
+            </p>
+          </div>
+
+          <!-- Completed Certifications -->
+          <div class="certs-group">
+            <div class="certs-group-title">
+              <span class="text-emerald">✓</span>
+              <span>Completed Credentials</span>
+              <span class="count-badge" id="completed-certs-count">3</span>
+            </div>
+            <div class="certs-row" id="completed-certs-grid">
+              <!-- Populated by app.js -->
+            </div>
+          </div>
+
+          <!-- In-Progress Certifications -->
+          <div class="certs-group">
+            <div class="certs-group-title">
+              <span class="text-cyan">⏳</span>
+              <span>In-Progress Certifications</span>
+              <span class="count-badge">Active Study</span>
+            </div>
+            <div class="certs-row" id="inprogress-certs-grid">
+              <!-- Populated by app.js -->
+            </div>
+          </div>
+
+          <!-- Planned Certifications -->
+          <div class="certs-group">
+            <div class="certs-group-title">
+              <span class="text-muted">🎯</span>
+              <span>Planned Certifications (Career Roadmap)</span>
+            </div>
+            <div class="certs-row" id="planned-certs-grid">
+              <!-- Populated by app.js -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION SECTION -->
+      <section class="education-section" id="education">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-pretitle">Academic Background</div>
+            <h2 class="section-title">Education & Coursework</h2>
+            <p class="section-subtitle">
+              Comprehensive undergraduate program covering network theory, cryptosystems, binary exploitation, and security governance.
+            </p>
+          </div>
+
+          <div class="edu-main-card">
+            <div class="edu-header-row">
+              <div class="edu-title-group">
+                <h3 class="edu-degree" id="edu-degree-title">Bachelor of Science in Cybersecurity</h3>
+                <div class="edu-university" id="edu-university-name">[YOUR UNIVERSITY]</div>
+                <div class="text-muted" style="font-size: 0.9rem;" id="edu-location">[YOUR LOCATION]</div>
+              </div>
+              <div class="edu-meta-badges">
+                <div class="edu-gpa-badge" id="edu-gpa">GPA: 3.8 / 4.0</div>
+                <div class="edu-timeline-badge" id="edu-timeline">2022 – 2026 (Expected)</div>
+                <div class="status-pill" style="font-size: 0.725rem; padding: 0.2rem 0.6rem;">Senior (4th Year)</div>
+              </div>
+            </div>
+
+            <!-- Honors and Involvement -->
+            <div class="edu-honors-list">
+              <div class="edu-honor-item">
+                <span class="text-cyan">★</span>
+                <span>Dean's Honor List (6 Semesters)</span>
+              </div>
+              <div class="edu-honor-item">
+                <span class="text-cyan">★</span>
+                <span>University Cyber Defense Club Member</span>
+              </div>
+              <div class="edu-honor-item">
+                <span class="text-cyan">★</span>
+                <span>Regional CCDC Competitor</span>
+              </div>
+            </div>
+
+            <!-- Coursework Grid -->
+            <div>
+              <div class="coursework-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Relevant Cybersecurity Coursework</span>
+              </div>
+              <div class="coursework-grid" id="coursework-grid">
+                <!-- Populated by app.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE & "BUILDING EXPERIENCE" SECTION -->
+      <section class="experience-section" id="experience">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-pretitle">Career Development</div>
+            <h2 class="section-title">Experience & Practical Milestones</h2>
+            <p class="section-subtitle">
+              Demonstrated initiative through lab leadership, campus IT defense, and competitive red/blue team exercises.
+            </p>
+          </div>
+
+          <!-- "Building Experience" Callout Banner -->
+          <div class="building-experience-banner">
+            <div class="building-exp-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div class="building-exp-content">
+              <h3>Actively Building Enterprise-Grade Practical Experience</h3>
+              <p id="building-exp-text">
+                While completing my senior year, I bridge academic coursework with hands-on responsibilities: maintaining virtualized student cyber ranges, responding to tier-1 campus security alerts, competing in live cyber defense events, and authoring reproducible security write-ups.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Tree -->
+          <div class="timeline-tree" id="experience-timeline">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- RESUME SECTION -->
+      <section class="resume-section" id="resume">
+        <div class="container">
+          <div class="resume-callout-card">
+            <div class="resume-callout-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h2 class="resume-callout-title">Curriculum Vitae / Resume</h2>
+            <p class="resume-callout-desc">
+              Looking for a comprehensive technical breakdown formatted specifically for technical recruiters and engineering hiring managers?
+            </p>
+
+            <div class="resume-actions-group">
+              <button class="btn btn-primary" id="btn-view-resume-modal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>View Interactive Resume</span>
+              </button>
+
+              <button class="btn btn-secondary" id="btn-download-resume-action">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download PDF Resume</span>
+              </button>
+
+              <button class="btn btn-outline" onclick="window.print()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                <span>Print Document</span>
+              </button>
+            </div>
+
+            <div class="resume-tip-box">
+              <span class="text-cyan">💡 Tip:</span>
+              <span>Simply drop your own <code>resume.pdf</code> into this folder to automatically connect your official PDF!</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section class="contact-section" id="contact">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-pretitle">Initiate Transmission</div>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">
+              Interested in cybersecurity, collaboration, internships, or discussing a security project? I'd love to hear from you.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info-panel">
+              <h3>Let's Connect</h3>
+              <p class="contact-message-lead">
+                I am currently interviewing for Summer 2025/2026 internships and entry-level positions in SOC analysis, penetration testing, threat detection, and security consulting.
+              </p>
+
+              <div class="contact-channels-list">
+                <a href="mailto:[YOUR EMAIL]" class="contact-channel-item" id="contact-email-link">
+                  <div class="channel-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </div>
+                  <div class="channel-details">
+                    <span class="channel-label">Direct Email</span>
+                    <span class="channel-value" id="contact-email-display">[YOUR EMAIL]</span>
+                  </div>
+                </a>
+
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-channel-item" id="contact-linkedin-link">
+                  <div class="channel-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  </div>
+                  <div class="channel-details">
+                    <span class="channel-label">LinkedIn Profile</span>
+                    <span class="channel-value" id="contact-linkedin-display">Connect on LinkedIn</span>
+                  </div>
+                </a>
+
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-channel-item" id="contact-github-link">
+                  <div class="channel-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </div>
+                  <div class="channel-details">
+                    <span class="channel-label">GitHub Repository</span>
+                    <span class="channel-value" id="contact-github-display">Review Code & Writeups</span>
+                  </div>
+                </a>
+
+                <div class="contact-channel-item">
+                  <div class="channel-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  </div>
+                  <div class="channel-details">
+                    <span class="channel-label">Location / Relocation</span>
+                    <span class="channel-value" id="contact-location-display">[YOUR LOCATION]</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PGP / Security Fingerprint -->
+              <div class="pgp-security-box">
+                <div class="pgp-header">
+                  <span class="pgp-title">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>PGP KEY FINGERPRINT</span>
+                  </span>
+                  <span class="status-pill" style="font-size: 0.65rem; padding: 0.1rem 0.4rem;">RSA 4096</span>
+                </div>
+                <div class="pgp-fingerprint">
+                  4E92 B2A8 9C31 01F7 8540  D62A E8F3 4409 A12B 7F9E
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Contact Form -->
+            <div class="contact-form-panel">
+              <form class="contact-form" id="contact-form" novalidate>
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Full Name *</label>
+                  <input type="text" id="contact-name" class="form-input" placeholder="e.g., Sarah Connor / Hiring Manager" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email Address *</label>
+                  <input type="email" id="contact-email" class="form-input" placeholder="e.g., sconnor@defense-corp.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-subject" class="form-label">Subject *</label>
+                  <input type="text" id="contact-subject" class="form-input" placeholder="e.g., Summer 2025 Internship Opportunity / Security Inquiry" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">Message *</label>
+                  <textarea id="contact-message" class="form-textarea" placeholder="Hello! I reviewed your cybersecurity projects and would like to schedule an introductory conversation..." required></textarea>
+                </div>
+
+                <div id="contact-feedback" class="form-feedback-alert" role="alert"></div>
+
+                <button type="submit" class="btn btn-primary" id="btn-submit-contact">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  <span>Send Message</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top-grid">
+          <div class="footer-brand">
+            <h4 id="footer-name">[YOUR NAME]</h4>
+            <p id="footer-title">Cybersecurity Student • Defensive & Offensive Security</p>
+          </div>
+
+          <div class="footer-links-group">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-link" id="footer-github-link">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-link" id="footer-linkedin-link">LinkedIn</a>
+            <a href="mailto:[YOUR EMAIL]" class="footer-link" id="footer-email-link">Email</a>
+            <a href="#hero" class="back-to-top-btn" aria-label="Scroll back to top">
+              ↑ Back to top
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom-row">
+          <div>
+            &copy; <span id="current-year">2025</span> <span id="footer-copy-name">[YOUR NAME]</span>. All rights reserved.
+          </div>
+          <div class="font-mono text-muted">
+            SHA256: 9b2d8f7e...SECURE_STATIC_BUILD
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- FLOATING CUSTOMIZE BUTTON (ALLOWS EASY REAL-TIME EDITING) -->
+  <button class="customizer-toggle-btn" id="btn-open-customizer" title="Customize Your Details">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+    <span>Personalize Portfolio</span>
+  </button>
+
+  <!-- MODAL: INTERACTIVE CLI TERMINAL -->
+  <div class="modal-overlay" id="modal-terminal" role="dialog" aria-modal="true" aria-labelledby="terminal-modal-title">
+    <div class="terminal-window">
+      <div class="terminal-header-bar">
+        <div class="window-dots">
+          <span class="dot red" id="term-close-dot" style="cursor: pointer;"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="terminal-header-title" id="terminal-modal-title">bash - defensive_shell@antigravity:~ (pty0)</div>
+        <button class="modal-close-btn" id="btn-close-terminal" aria-label="Close terminal">&times;</button>
+      </div>
+      <div class="terminal-screen" id="terminal-screen">
+        <div class="term-line-output" id="term-welcome"></div>
+        <div id="term-history"></div>
+        <div class="term-prompt-row">
+          <span class="term-prompt-user">visitor@cyber-sec:~$</span>
+          <input type="text" id="term-input" class="term-input" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: PROJECT DEEP DIVE MODAL -->
+  <div class="modal-overlay" id="modal-project" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="modal-project-title">Project Case Study</h3>
+          <span id="modal-project-badge">ARCHITECTURE & DEFENSIVE MITIGATION</span>
+        </div>
+        <button class="modal-close-btn" id="btn-close-project-modal" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-content-scroll" id="modal-project-body">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: INTERACTIVE RESUME VIEWER -->
+  <div class="modal-overlay" id="modal-resume" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+    <div class="modal-container" style="max-width: 880px;">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="resume-modal-title">Curriculum Vitae</h3>
+          <span>PRINTABLE TECHNICAL RESUME</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <button class="btn btn-primary btn-sm" onclick="window.print()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            <span>Print / Save PDF</span>
+          </button>
+          <button class="modal-close-btn" id="btn-close-resume-modal" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+      <div class="modal-content-scroll" style="background: #0f172a; padding: 1.5rem;">
+        <div class="resume-modal-sheet" id="interactive-resume-sheet">
+          <!-- Rendered dynamically from portfolio data -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: LIVE PERSONALIZATION DRAWER -->
+  <div class="modal-overlay" id="modal-customizer" role="dialog" aria-modal="true" aria-labelledby="customizer-modal-title">
+    <div class="modal-container" style="max-width: 620px;">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="customizer-modal-title">Quick Personalize Portfolio</h3>
+          <span>UPDATE YOUR PLACEHOLDER INFO IN SECONDS</span>
+        </div>
+        <button class="modal-close-btn" id="btn-close-customizer" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-content-scroll">
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+          Fill in your details below to instantly preview your personalized portfolio in real-time. You can also edit <code>portfolio-data.js</code> directly anytime!
+        </p>
+        <form id="customizer-form" style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Your Full Name:</label>
+            <input type="text" id="cust-name" class="form-input" placeholder="e.g. Jordan Hayes">
+          </div>
+          <div class="form-group">
+            <label class="form-label">University Name:</label>
+            <input type="text" id="cust-university" class="form-input" placeholder="e.g. University of Maryland">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Location (City, State / Remote):</label>
+            <input type="text" id="cust-location" class="form-input" placeholder="e.g. College Park, MD (Open to Relocation)">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address:</label>
+            <input type="email" id="cust-email" class="form-input" placeholder="e.g. jhayes.cyber@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">GitHub URL or Username:</label>
+            <input type="text" id="cust-github" class="form-input" placeholder="e.g. https://github.com/jhayes-sec">
+          </div>
+          <div class="form-group">
+            <label class="form-label">LinkedIn URL:</label>
+            <input type="text" id="cust-linkedin" class="form-input" placeholder="e.g. https://linkedin.com/in/jhayes-cyber">
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
+            <button type="submit" class="btn btn-primary" style="flex: 1;">
+              <span>Apply Changes Live</span>
+            </button>
+            <button type="button" class="btn btn-secondary" id="btn-reset-defaults">
+              <span>Reset to Defaults</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOAD DATA & MAIN LOGIC -->
+  <script src="portfolio-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
